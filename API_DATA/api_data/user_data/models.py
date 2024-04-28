@@ -13,7 +13,7 @@ from sqlalchemy import (
     BigInteger
 )
 class UserData(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
+    id=db.Column(db.Integer,primary_key=True,autoincrement=True)
     name=db.Column(db.String(200))
     age=db.Column(db.Integer)
     country=db.Column(db.String(200))
@@ -21,7 +21,7 @@ class UserData(db.Model):
     email=db.Column(db.String(250))
 
 class CustomerData(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
+    id=db.Column(db.Integer,primary_key=True,autoincrement=True)
     customer_id=db.Column(db.String(50))
     name=db.Column(db.String(50))
     age=db.Column(db.Integer)
@@ -30,7 +30,7 @@ class CustomerData(db.Model):
     
 
 class StaffData(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
+    id=db.Column(db.Integer,primary_key=True,autoincrement=True)
     name=db.Column(db.String(200))
     age=db.Column(db.Integer)
     gender=db.Column(db.String(200))
