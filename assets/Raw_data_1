@@ -1,9 +1,8 @@
-Name          Age   Gender   Occupation        City         Email                     Phone
-John Doe      32    Male     Software Engineer New York     john.doe@example.com      123-456-7890
-Jane Smith    28    Female   Data Analyst      San Francisco jane.smith@example.com    987-654-3210
-David Johnson 45    Male     Marketing Manager Chicago      david.j@example.com       555-123-4567
-Emily Brown   35    Female   Project Manager   Los Angeles  emily.b@example.com       456-789-0123
-Michael Lee   40    Male     Financial Analyst Houston      michael.lee@example.com   789-012-3456
-Sarah Miller  29    Female   Graphic Designer  Seattle      sarah.m@example.com       321-654-0987
-Kevin Wang    33    Male     UX Designer       Austin       kevin.w@example.com       987-321-6540
-
+Name|Age|Gender|Occupation|City|Email|Phone
+John Doe|32|Male|Software Engineer|New York|john.doe@example.com|123-456-7890
+Jane Smith|28|Female|Data Analyst|San Francisco|jane.smith@example.com|987-654-3210
+David Johnson|45|Male|Marketing Manager|Chicago|david.j@example.com|555-123-4567
+Emily Brown|35|Female|Project Manager|Los Angeles|emily.b@example.com|456-789-0123
+Michael Lee|40|Male|Financial Analyst|Houston|michael.lee@example.com|789-012-3456
+Sarah Miller|29|Female|Graphic Designer|Seattle|sarah.m@example.com|321-654-0987
+Kevin Wang|33|Male|UX Designer|Austin|kevin.w@example.com|987-321-6540

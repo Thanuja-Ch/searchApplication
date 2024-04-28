@@ -8,7 +8,7 @@ from flask import Blueprint
 from flask_restx import Api as RestX_Api
 from api_data.extensions import db
 
-from api_data.commands import userdata
+from api_data.commands import userdata, staffdata, customerdata
 
 import click
 from flask.cli import with_appcontext
@@ -44,6 +44,8 @@ def create_app():
 
 
     app.cli.add_command(userdata)
+    app.cli.add_command(staffdata)
+    app.cli.add_command(customerdata)
          
     return app
 
