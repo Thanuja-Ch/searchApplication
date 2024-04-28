@@ -10,4 +10,5 @@ open_api=Namespace("openapi")
 @open_api.route('/interest-calculator')
 class InterestCalculator(Resource):
     def post(self):
-        return "hi"
+        req = request.get_json()
+        return c.calculate_interest(req)
