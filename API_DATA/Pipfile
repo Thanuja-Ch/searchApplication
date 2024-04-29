@@ -17,6 +17,7 @@ marshmallow-sqlalchemy = "*"
 pandas = "*"
 numpy = "*"
 click = "*"
+openpyxl = "*"
 
 [dev-packages]
 
