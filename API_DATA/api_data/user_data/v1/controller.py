@@ -4,13 +4,13 @@ from io import BytesIO
 from openpyxl import Workbook
 from sqlalchemy import text
 
-from flask import make_response, jsonify, send_file
+from flask import make_response, jsonify, send_file, Response
 
 
 def calculate_interest(req):
-    principal = req["principal"]
-    rate = req["rate"]
-    time = req["time"]
+    principal = float(req["principal"])
+    rate = float(req["rate"])
+    time = float(req["time"])
     interest = (principal * rate * time) / 100
     response = {
         "interest": interest
@@ -18,24 +18,10 @@ def calculate_interest(req):
     return make_response(jsonify(response), 200)
 
 def export_excel(transcribed_texts):
-    wb = Workbook()
-    ws = wb.active
-    ws.title = 'transcribed_texts'
-    column_names = ['Column1']
-    ws.append(column_names)
+    df=pd.DataFrame(transcribed_texts)
+    excel_file_path = 'output.xlsx'
+    df.to_excel(excel_file_path, index=False)
 
-    for row in transcribed_texts:
-        ws.append(row)
-
-    excel_data = BytesIO()
-    wb.save(excel_data)
-    excel_data.seek(0)
-    return send_file(
-        excel_data,
-        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        as_attachment=True,
-        download_name='transcribed_texts.xlsx'
-    )
 
 def searchData(req):
     select_dropdown=req["dropdown"]

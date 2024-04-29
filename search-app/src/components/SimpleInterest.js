@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const API_URL="http://localhost:5000"
+export const API_URL="http://127.0.0.1:5000"
 
 const SimpleInterest = () => {
     const [formData, setFormData] = useState({
@@ -37,8 +37,8 @@ const SimpleInterest = () => {
             const responseData = await response.json();
             
 
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            setResponse(responseData.message);
+            // await new Promise(resolve => setTimeout(resolve, 2000));
+            setResponse(responseData.interest);
             setLoading(false);
         
     };

@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { saveAs } from 'file-saver';
 
-export const API_URL="http://localhost:5000"
+export const API_URL="http://127.0.0.1:5000"
 
 const SpeechRecognition = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [recordedText, setRecordedText] = useState('');
   const [recordings, setRecordings] = useState([]);
-  const [recognition, setRecognition] = useState(null); // Added state for recognition instance
+  const [recognition, setRecognition] = useState(null); 
   const [recordingStatus, setRecordingStatus] = useState('Start Recording');
   const [showPreview, setShowPreview] = useState(false);
 
   const downloadExcel = async () => {
     try {
-      const response = await axios.get(API_URL+"/api/v1/speech-recognition", {
-        responseType: 'blob',
+      await axios.post(API_URL + "/api/v1/speech-recognition", {
+        transcribed_texts: recordings,
       });
-      saveAs(response.data, 'speech_data.xlsx');
+  
     } catch (error) {
-      console.error('Error downloading Excel file:', error);
+      console.error("Error downloading Excel file:", error);
     }
   };
+  
+
 
   const startRecording = () => {
     setIsRecording(true);

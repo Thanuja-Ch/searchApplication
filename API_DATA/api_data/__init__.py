@@ -7,6 +7,7 @@ from api_data import extensions
 from flask import Blueprint
 from flask_restx import Api as RestX_Api
 from api_data.extensions import db
+from flask_cors import CORS
 
 from api_data.commands import userdata, staffdata, customerdata
 
@@ -29,6 +30,7 @@ rest_api.add_namespace(open_api,path='/v1')
 
 def create_app():
     app = Flask(__name__)
+    CORS(app, origins="http://localhost:3000")
     app.config.from_object(get_config_object_path())
 
     app.register_blueprint(api_blueprint)
