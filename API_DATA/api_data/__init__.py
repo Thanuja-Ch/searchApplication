@@ -29,7 +29,6 @@ rest_api.add_namespace(open_api,path='/v1')
 
 def create_app():
     app = Flask(__name__)
-
     app.config.from_object(get_config_object_path())
 
     app.register_blueprint(api_blueprint)

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 
-export const API_URL="http://localhost:5000"
-
 const SpeechRecognition = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [recordedText, setRecordedText] = useState('');
@@ -14,7 +12,7 @@ const SpeechRecognition = () => {
 
   const downloadExcel = async () => {
     try {
-      const response = await axios.get(API_URL+"/api/v1/speech-recognition", {
+      const response = await axios.get('your-backend-excel-endpoint', {
         responseType: 'blob',
       });
       saveAs(response.data, 'speech_data.xlsx');

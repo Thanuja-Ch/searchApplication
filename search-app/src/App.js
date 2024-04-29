@@ -1,9 +1,10 @@
 import './App.css';
+import LandingPage from './pages/LandingPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      Hello
+    <div>
+      <LandingPage />
     </div>
   );
 }

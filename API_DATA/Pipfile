@@ -18,6 +18,7 @@ pandas = "*"
 numpy = "*"
 click = "*"
 openpyxl = "*"
+flask-cors = "*"
 
 [dev-packages]
 
